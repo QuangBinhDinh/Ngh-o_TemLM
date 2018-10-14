@@ -1,0 +1,17 @@
+Chuong trinh tu dien duoc code boi Dinh Quang Binh va Nguyen Dat Ngoc Anh
+                           ********************HUONG DAN SU DUNG CHUONG TRINH*********************
+
+Sau khi tai toan bo file ve, cho chung vao cung 1 thu muc roi chay file Dictionary.jar trong cmd...
+Khi bat dau chay, chuong trinh yeu cau nhap dia chi IPV4 cua mang LAN dang su dung (de connect to database). Neu khong co ket noi
+mang thi co the bo qua. Sau do chuong trinh se dua ra 2 option: insert du lieu = database va insert du lieu = file. De tranh 
+truong hop bi loi khi ket noi mang, nen chon option thu 2 insert du lieu = file.
+*****Neu nguoi dung co cai dat MySQL thi co the tu add bo tu dien vao (.sql file). Sau do thay doi cac thuoc tinh private String
+url, username, pass trong class DictionaryManagement
+Sau khi insert du lieu thanh cong, chuong trinh se dua ra 6 chuc nang.
+1: Tra cuu tu
+2: Xuat toan bo tu ra cmd
+3: Dich van ban (online)
+4: Cai dat tu dien(gom cac ham them, xoa tu, chinh sua noi dung,...)
+5. Xuat toan bo tu ra file
+6. Phat am tu (online)
+Chu y: Chuc nang thu 4 phai co pass moi co the su dung duoc (mac dinh la 88888888)
