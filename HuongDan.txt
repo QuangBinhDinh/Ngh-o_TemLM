@@ -1,0 +1,10 @@
+﻿Chương trình từ điển này được code bởi Đinh Quang Bình và Nguyễn Đạt Ngọc Anh
+                   **************************HUONG DAN SU DUNG CHUONG TRINH**************************************
+Truoc khi su dung chuong trinh, cho tep lib, file dicitonary.jar va file database sql vao cung 1 thu muc. Sau do chay bang cmd...
+Vi chuong trinh nay su dung database de them tu vao tu dien, nen username va pass co the khac nhau. Mo project bang IDE va chinh
+sua 2 thuoc tinh private String user, va private String pass trong class DictionaryManagement.
+
+Chuong trinh tu dien co 6 chuc nang chinh chay o ham main runDictionary.java. Cac chuc nang gom dich tu, dich van ban, phat am, 
+xuat tu ra file, chinh sua tu dien. Cac chuc nang dich tu, xuat tu la chuc nang nguoi dung co the truy cap. Con voi chuc nang chinh
+sua tu dien (thuc chat la cac ham trong DictionaryManagement) can co pass de su dung (pass mac dinh la 88888888). 
+Luu y chuc nang dich van ban, phat am su dung api google translate, cho nen can phai co ket noi mang moi co the dung chuc nang nay
