@@ -19,14 +19,19 @@ public class MainDictonary extends javax.swing.JFrame {
     /**
      * Creates new form MainDictonary
      */
-    public static Dictionary dict = new Dictionary();
-    public  static DictionaryManagement dm = new DictionaryManagement();
-    public static DictionaryCommand dc = new DictionaryCommand();
+    private static Dictionary dict;
+    private DictionaryManagement dm;
+    private DictionaryCommand dc;
     public MainDictonary(){
         initComponents();
-       
+        dict = new Dictionary();
+        dm = new DictionaryManagement();
+        dc = new DictionaryCommand();
+        
     }
-     
+    public static Dictionary getDict(){
+        return dict;
+    } 
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +48,8 @@ public class MainDictonary extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(0, 204, 204));
         jButton1.setText("Insert dictionary by connecting to database");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,13 +57,18 @@ public class MainDictonary extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(0, 204, 204));
         jButton2.setText("Insert dictionary by file");
+        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setForeground(new java.awt.Color(0, 204, 204));
         jButton3.setText("Exit");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +117,7 @@ public class MainDictonary extends javax.swing.JFrame {
         dm.insertFromDatabase(dict, dm.getData());
         JFameDatafile dataf = new JFameDatafile();
         dataf.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -116,6 +129,7 @@ public class MainDictonary extends javax.swing.JFrame {
         }
         JFameDatafile ex1 = new JFameDatafile();
         ex1.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

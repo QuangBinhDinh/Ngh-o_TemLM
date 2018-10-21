@@ -22,12 +22,20 @@ public class JFameDatafile extends javax.swing.JFrame {
     /**
      * Creates new form JFameDictionary
      */
-    
+    private static Dictionary dict;
+    private DictionaryManagement dm;
+    private DictionaryCommand dc;
     public JFameDatafile() {
         initComponents();
-        
+        dict = MainDictonary.getDict();
+        dm = new DictionaryManagement();
+        dc = new DictionaryCommand();
+        getContentPane().setBackground(Color.CYAN);
+        setTitle("Dictionary");
     }
-
+    public static Dictionary getDict(){
+        return dict;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,6 +70,8 @@ public class JFameDatafile extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 153, 0));
         setFocusCycleRoot(false);
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(0, 153, 153));
         jButton2.setText("Exit");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +79,7 @@ public class JFameDatafile extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(0, 204, 204));
         jButton1.setText("Tra từ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +93,7 @@ public class JFameDatafile extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(51, 51, 51));
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setForeground(new java.awt.Color(0, 204, 204));
         jButton3.setText("Dịch văn bản");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +105,8 @@ public class JFameDatafile extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel4.setText("Made by Quang Binh , Ngoc Anh");
 
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setForeground(new java.awt.Color(0, 204, 204));
         jButton4.setText("Cài đặt");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +180,7 @@ public class JFameDatafile extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-       JFamExfile ex1 = new JFamExfile();
+       passWord ex1 = new passWord();
        ex1.setVisible(true);
         
     }//GEN-LAST:event_jButton4ActionPerformed
