@@ -1,6 +1,5 @@
-
 package Dictionary;
-import java.io.*;
+/*import java.io.*;
 import java.util.Scanner;
 
 public class runDictionary {
@@ -135,4 +134,4 @@ public class runDictionary {
             }
         } 
     }
-}
+}*/

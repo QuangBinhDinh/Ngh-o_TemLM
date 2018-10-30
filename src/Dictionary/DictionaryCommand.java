@@ -20,7 +20,7 @@ public class DictionaryCommand {
         //ham tim kiem tu
         //chen code graphic vao day
         String word;
-        System.out.println("Enter word you want to look up:");
+        //System.out.println("Enter word you want to look up:");
         word = sc.nextLine();
         d.expertSearch(word);
     }

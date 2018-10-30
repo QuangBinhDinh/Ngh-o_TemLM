@@ -11,7 +11,7 @@ import java.util. *;
  * @author Win10
  */
 public class Dictionary {
-    private Set<Word> list ;
+    public Set<Word> list ;
     
     public Dictionary(){
         list = new TreeSet<>(new WordComparator());
@@ -28,22 +28,20 @@ public class Dictionary {
             //duyet den phan tu can duoc xoa
             Word w = (Word) it.next();
             if(w.getTarget().equals(word)){
-                list.remove(w);
+                it.remove();
                 
             }
         }
     }
-    public void editMeaning(String word){
+    public void editMeaning(String word, String mean){
         //sua nghia cua tu
        Iterator it = list.iterator();
         while(it.hasNext()){
             Word w = (Word) it.next();
             if(w.getTarget().equalsIgnoreCase(word)){
                 //duyet den phan tu can duoc sua
-                  System.out.println("Enter the new meaning: ");
-                  Scanner sc = new Scanner(System.in);
-                  String s= sc.nextLine();
-                  w.setExpalin(s);
+                  
+                  w.setExpalin(mean);
             }
         }
     }
