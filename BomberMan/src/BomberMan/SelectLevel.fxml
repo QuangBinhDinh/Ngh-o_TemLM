@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BomberMan.SelectLevelController">
+   <children>
+      <ImageView fitHeight="764.0" fitWidth="784.0" layoutX="-14.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/GrassGround2.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="240.0" layoutY="58.0" prefHeight="103.0" prefWidth="294.0" text="Select Level" textFill="#54ff00">
+         <font>
+            <Font name="Arial Black" size="38.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="Level1" layoutX="89.0" layoutY="200.0" onMouseClicked="#Level1" onMouseEntered="#enterLv1" onMouseExited="#exitLv1" prefHeight="150.0" prefWidth="150.0">
+         <children>
+            <ImageView fx:id="Image1" fitHeight="150.0" fitWidth="150.0" onMouseClicked="#Level1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/WoodPane.jpg" />
+               </image>
+            </ImageView>
+            <Rectangle fx:id="Rect1" arcHeight="5.0" arcWidth="5.0" fill="#ff2121" height="150.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="150.0" />
+            <Label fx:id="Label1" alignment="CENTER" layoutX="21.0" layoutY="7.0" prefHeight="76.0" prefWidth="109.0" text="Level1" textFill="#d3f018">
+               <font>
+                  <Font name="Papyrus" size="35.0" />
+               </font>
+            </Label>
+            <Polygon fx:id="Star12" layoutX="75.0" layoutY="100.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+            <Polygon fx:id="Star11" layoutX="40.0" layoutY="110.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+            <Polygon fx:id="Star121" layoutX="110.0" layoutY="110.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+            
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Level2" layoutX="312.0" layoutY="200.0" onMouseClicked="#Level2" onMouseEntered="#enterLv2" onMouseExited="#exitLv2" prefHeight="150.0" prefWidth="150.0">
+         <children>
+            <ImageView fx:id="Image11" fitHeight="150.0" fitWidth="150.0" onMouseClicked="#Level1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/WoodPane.jpg" />
+               </image>
+            </ImageView>
+            <Rectangle fx:id="Rect2" arcHeight="5.0" arcWidth="5.0" fill="#ff2121" height="150.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="150.0" />
+            <Label fx:id="Label2" alignment="CENTER" layoutX="21.0" layoutY="7.0" prefHeight="76.0" prefWidth="109.0" text="Level2" textFill="#d3f018">
+               <font>
+                  <Font name="Papyrus" size="35.0" />
+               </font>
+            </Label>
+            <Polygon fx:id="Star22" layoutX="75.0" layoutY="100.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+            <Polygon fx:id="Star21" layoutX="40.0" layoutY="110.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+            <Polygon fx:id="Star23" layoutX="110.0" layoutY="110.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Level3" layoutX="534.0" layoutY="200.0" onMouseClicked="#Level3" onMouseEntered="#enterLv3" onMouseExited="#exitLv3" prefHeight="150.0" prefWidth="150.0">
+         <children>
+            <ImageView fx:id="Image12" fitHeight="150.0" fitWidth="150.0" onMouseClicked="#Level1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/WoodPane.jpg" />
+               </image>
+            </ImageView>
+            <Rectangle fx:id="Rect3" arcHeight="5.0" arcWidth="5.0" fill="#ff2121" height="150.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="150.0" />
+            <Label fx:id="Label3" alignment="CENTER" layoutX="21.0" layoutY="7.0" prefHeight="76.0" prefWidth="109.0" text="Level3" textFill="#d3f018">
+               <font>
+                  <Font name="Papyrus" size="35.0" />
+               </font>
+            </Label>
+            <Polygon fx:id="Star32" layoutX="75.0" layoutY="100.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+            <Polygon fx:id="Star31" layoutX="40.0" layoutY="110.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+            <Polygon fx:id="Star33" layoutX="110.0" layoutY="110.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

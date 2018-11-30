@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BomberMan.MainMenuController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/GrassGround2.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="newGame" layoutX="200.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#NewGame" onMouseEntered="#enterNewGame" onMouseExited="#exitNewGame" prefHeight="52.0" prefWidth="350.0" style="-fx-background-color: #321d04;" text="New Game" textFill="#ff8500d4">
+         <font>
+            <Font name="Papyrus" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="highScores" layoutX="200.0" layoutY="400.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="350.0" style="-fx-background-color: #321d04;" text="High Scores" textFill="#ff8400d4">
+         <font>
+            <Font name="Papyrus" size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="200.0" layoutY="500.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="350.0" style="-fx-background-color: #321d04;" text="About" textFill="#ff8400d4">
+         <font>
+            <Font name="Papyrus" size="24.0" />
+         </font>
+      </Button>
+      <ImageView blendMode="ADD" fitHeight="194.0" fitWidth="550.0" layoutX="100.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LogoBomb.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="200.0" layoutY="600.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="350.0" style="-fx-background-color: #321d04;" text="Exit" textFill="#ff8400d4">
+         <font>
+            <Font name="Papyrus" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,1791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import java.util.*?>
+<Pane fx:id="myPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#move" onKeyReleased="#getPlayerPos" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BomberMan.FXMLDocumentController">
+   <children>
+      <ImageView fx:id="background" fitHeight="778.0" fitWidth="856.0" layoutX="-25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/GrassGround2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Door" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Door.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BombBuff" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/BombBuff.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall1" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall2" fitHeight="50.0" fitWidth="50.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall3" fitHeight="50.0" fitWidth="50.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall4" fitHeight="50.0" fitWidth="50.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall5" fitHeight="50.0" fitWidth="50.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall6" fitHeight="50.0" fitWidth="50.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall7" fitHeight="50.0" fitWidth="50.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall8" fitHeight="50.0" fitWidth="50.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall9" fitHeight="50.0" fitWidth="50.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall10" fitHeight="50.0" fitWidth="50.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall11" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall12" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall13" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall14" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall15" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall16" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall17" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall18" fitHeight="50.0" fitWidth="50.0" layoutX="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall19" fitHeight="50.0" fitWidth="50.0" layoutX="950.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall20" fitHeight="50.0" fitWidth="50.0" layoutX="900.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall21" fitHeight="50.0" fitWidth="50.0" layoutX="850.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall22" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall23" fitHeight="50.0" fitWidth="50.0" layoutX="750.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall24" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall25" fitHeight="50.0" fitWidth="50.0" layoutX="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall26" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall27" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall28" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall29" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall30" fitHeight="50.0" fitWidth="50.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall31" fitHeight="50.0" fitWidth="50.0" layoutX="1050.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall32" fitHeight="50.0" fitWidth="50.0" layoutX="1100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall33" fitHeight="50.0" fitWidth="50.0" layoutX="1150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall34" fitHeight="50.0" fitWidth="50.0" layoutX="1200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall35" fitHeight="50.0" fitWidth="50.0" layoutX="1250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall36" fitHeight="50.0" fitWidth="50.0" layoutX="1300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall37" fitHeight="50.0" fitWidth="50.0" layoutX="1350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall38" fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall39" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall40" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall41" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall42" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall43" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall44" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall45" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall46" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall47" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall48" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall49" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall50" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall51" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall52" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall53" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall54" fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall55" fitHeight="50.0" fitWidth="50.0" layoutX="1350.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall56" fitHeight="50.0" fitWidth="50.0" layoutX="1300.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall57" fitHeight="50.0" fitWidth="50.0" layoutX="1250.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall58" fitHeight="50.0" fitWidth="50.0" layoutX="1200.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall59" fitHeight="50.0" fitWidth="50.0" layoutX="1150.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall60" fitHeight="50.0" fitWidth="50.0" layoutX="1100.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall61" fitHeight="50.0" fitWidth="50.0" layoutX="1050.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall62" fitHeight="50.0" fitWidth="50.0" layoutX="1000.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall63" fitHeight="50.0" fitWidth="50.0" layoutX="950.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall64" fitHeight="50.0" fitWidth="50.0" layoutX="900.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall65" fitHeight="50.0" fitWidth="50.0" layoutX="850.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall66" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall67" fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall68" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall69" fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall70" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall71" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall72" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall73" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall74" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall75" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall76" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall77" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall78" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall79" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall80" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall81" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall82" fitHeight="50.0" fitWidth="50.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall83" fitHeight="50.0" fitWidth="50.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall84" fitHeight="50.0" fitWidth="50.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall85" fitHeight="50.0" fitWidth="50.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall86" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall87" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall88" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall89" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall90" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall91" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall92" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall93" fitHeight="50.0" fitWidth="50.0" layoutX="900.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall94" fitHeight="50.0" fitWidth="50.0" layoutX="1000.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall95" fitHeight="50.0" fitWidth="50.0" layoutX="1100.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall96" fitHeight="50.0" fitWidth="50.0" layoutX="1200.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall97" fitHeight="50.0" fitWidth="50.0" layoutX="1300.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall98" fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall99" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall100" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall101" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall102" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall103" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall104" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall105" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall106" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall107" fitHeight="50.0" fitWidth="50.0" layoutX="900.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall108" fitHeight="50.0" fitWidth="50.0" layoutX="1000.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall109" fitHeight="50.0" fitWidth="50.0" layoutX="1100.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall110" fitHeight="50.0" fitWidth="50.0" layoutX="1200.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall111" fitHeight="50.0" fitWidth="50.0" layoutX="1300.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall112" fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall113" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall114" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall115" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall116" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall117" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall118" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall119" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall120" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall121" fitHeight="50.0" fitWidth="50.0" layoutX="900.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall122" fitHeight="50.0" fitWidth="50.0" layoutX="1000.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall123" fitHeight="50.0" fitWidth="50.0" layoutX="1100.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall124" fitHeight="50.0" fitWidth="50.0" layoutX="1200.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall125" fitHeight="50.0" fitWidth="50.0" layoutX="1300.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall126" fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall127" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall128" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall129" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall130" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall131" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall132" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall133" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall134" fitHeight="50.0" fitWidth="50.0" layoutX="900.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall135" fitHeight="50.0" fitWidth="50.0" layoutX="1000.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall136" fitHeight="50.0" fitWidth="50.0" layoutX="1100.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall137" fitHeight="50.0" fitWidth="50.0" layoutX="1200.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall138" fitHeight="50.0" fitWidth="50.0" layoutX="1300.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall139" fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall140" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall141" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall142" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall143" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall144" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall145" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall146" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall147" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall148" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall149" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall150" fitHeight="50.0" fitWidth="50.0" layoutX="900.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall151" fitHeight="50.0" fitWidth="50.0" layoutX="1000.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall152" fitHeight="50.0" fitWidth="50.0" layoutX="1100.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall153" fitHeight="50.0" fitWidth="50.0" layoutX="1200.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall154" fitHeight="50.0" fitWidth="50.0" layoutX="1300.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall155" fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall156" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall157" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall158" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall159" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall160" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall161" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall162" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall163" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall164" fitHeight="50.0" fitWidth="50.0" layoutX="900.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall165" fitHeight="50.0" fitWidth="50.0" layoutX="1000.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall166" fitHeight="50.0" fitWidth="50.0" layoutX="1100.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall167" fitHeight="50.0" fitWidth="50.0" layoutX="1200.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall168" fitHeight="50.0" fitWidth="50.0" layoutX="1300.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Wall169" fitHeight="50.0" fitWidth="50.0" layoutX="1400.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall2.png" />
+         </image>
+      </ImageView>
+      
+      <ImageView fx:id="Dust1" fitHeight="50.0" fitWidth="50.0" layoutX="850.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust2" fitHeight="50.0" fitWidth="50.0" layoutX="850.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust3" fitHeight="50.0" fitWidth="50.0" layoutX="850.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust4" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust5" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust6" fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust7" fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust8" fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust9" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust10" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust11" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust12" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="650.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust13" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust14" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust15" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust16" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust17" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust18" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust19" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust20" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust21" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust22" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust23" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust24" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust25" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust26" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust27" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust28" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust29" fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust30" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust31" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust32" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust33" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust34" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust35" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust36" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust37" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust38" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust39" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust40" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust41" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust42" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust43" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust44" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust45" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust46" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust47" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust48" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust49" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust50" fitHeight="50.0" fitWidth="50.0" layoutX="160.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust51" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust52" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust53" fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust54" fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust55" fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust56" fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust57" fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust58" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust59" fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust60" fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Dust" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Wall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Player" blendMode="MULTIPLY" fitHeight="40.0" fitWidth="40.0" layoutX="50.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Player.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="0.16" specularExponent="40.0" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <fx:define>
+          <ArrayList fx:id="WallList">
+               <fx:reference source="Wall" />
+              <fx:reference source="Wall1" />
+              <fx:reference source="Wall2" />
+              <fx:reference source="Wall3" />
+              <fx:reference source="Wall4" />
+              <fx:reference source="Wall5" />
+              <fx:reference source="Wall6" />
+              <fx:reference source="Wall7" />
+              <fx:reference source="Wall8" />
+              <fx:reference source="Wall9" />
+              <fx:reference source="Wall10" />
+              <fx:reference source="Wall11" />
+              <fx:reference source="Wall12" />
+              <fx:reference source="Wall13" />
+              <fx:reference source="Wall14" />
+              <fx:reference source="Wall15" />
+              <fx:reference source="Wall16" />
+              <fx:reference source="Wall17" />
+              <fx:reference source="Wall18" />
+              <fx:reference source="Wall19" />
+              <fx:reference source="Wall20" />
+              <fx:reference source="Wall21" />
+              <fx:reference source="Wall22" />
+              <fx:reference source="Wall23" />
+              <fx:reference source="Wall24" />
+              <fx:reference source="Wall25" />
+              <fx:reference source="Wall26" />
+              <fx:reference source="Wall27" />
+              <fx:reference source="Wall28" />
+              <fx:reference source="Wall29" />
+              <fx:reference source="Wall30" />
+              <fx:reference source="Wall31" />
+              <fx:reference source="Wall32" />
+              <fx:reference source="Wall33" />
+              <fx:reference source="Wall34" />
+              <fx:reference source="Wall35" />
+              <fx:reference source="Wall36" />
+              <fx:reference source="Wall37" />
+              <fx:reference source="Wall38" />
+              <fx:reference source="Wall39" />
+              <fx:reference source="Wall40" />
+              <fx:reference source="Wall41" />
+              <fx:reference source="Wall42" />
+              <fx:reference source="Wall43" />
+              <fx:reference source="Wall44" />
+              <fx:reference source="Wall45" />
+              <fx:reference source="Wall46" />
+              <fx:reference source="Wall47" />
+              <fx:reference source="Wall48" />
+              <fx:reference source="Wall49" />
+              <fx:reference source="Wall50" />
+              <fx:reference source="Wall51" />
+              <fx:reference source="Wall52" />
+              <fx:reference source="Wall53" />
+              <fx:reference source="Wall54" />
+              <fx:reference source="Wall55" />
+              <fx:reference source="Wall56" />
+              <fx:reference source="Wall57" />
+              <fx:reference source="Wall58" />
+              <fx:reference source="Wall59" />
+              <fx:reference source="Wall60" />
+              <fx:reference source="Wall61" />
+              <fx:reference source="Wall62" />
+              <fx:reference source="Wall63" />
+              <fx:reference source="Wall64" />
+              <fx:reference source="Wall65" />
+              <fx:reference source="Wall66" />
+              <fx:reference source="Wall67" />
+              <fx:reference source="Wall68" />
+              <fx:reference source="Wall69" />
+              <fx:reference source="Wall70" />
+              <fx:reference source="Wall71" />
+              <fx:reference source="Wall72" />
+              <fx:reference source="Wall73" />
+              <fx:reference source="Wall74" />
+              <fx:reference source="Wall75" />
+              <fx:reference source="Wall76" />
+              <fx:reference source="Wall77" />
+              <fx:reference source="Wall78" />
+              <fx:reference source="Wall79" />
+              <fx:reference source="Wall80" />
+              <fx:reference source="Wall81" />
+              <fx:reference source="Wall82" />
+              <fx:reference source="Wall83" />
+              <fx:reference source="Wall84" />
+              <fx:reference source="Wall85" />
+              <fx:reference source="Wall86" />
+              <fx:reference source="Wall87" />
+              <fx:reference source="Wall88" />
+              <fx:reference source="Wall89" />              
+              <fx:reference source="Wall90" />
+              <fx:reference source="Wall91" />
+              <fx:reference source="Wall92" />             
+              <fx:reference source="Wall93" />
+              <fx:reference source="Wall94" />
+              <fx:reference source="Wall95" />
+              <fx:reference source="Wall96" />
+              <fx:reference source="Wall97" />
+              <fx:reference source="Wall98" />
+              <fx:reference source="Wall99" />
+              <fx:reference source="Wall100" />
+              <fx:reference source="Wall101" />
+              <fx:reference source="Wall102" />
+              <fx:reference source="Wall103" />
+              <fx:reference source="Wall104" />
+              <fx:reference source="Wall105" />
+              <fx:reference source="Wall106" />
+              <fx:reference source="Wall107" />
+              <fx:reference source="Wall108" />
+              <fx:reference source="Wall109" />
+              <fx:reference source="Wall110" />
+              <fx:reference source="Wall111" />
+              <fx:reference source="Wall112" />
+              <fx:reference source="Wall113" />
+              <fx:reference source="Wall114" />
+              <fx:reference source="Wall115" />
+              <fx:reference source="Wall116" />
+              <fx:reference source="Wall117" />
+              <fx:reference source="Wall118" />
+              <fx:reference source="Wall119" />
+              <fx:reference source="Wall120" />
+              <fx:reference source="Wall121" />
+              <fx:reference source="Wall122" />
+              <fx:reference source="Wall123" />
+              <fx:reference source="Wall124" />
+              <fx:reference source="Wall125" />
+              <fx:reference source="Wall126" />
+              <fx:reference source="Wall127" />
+              <fx:reference source="Wall128" />
+              <fx:reference source="Wall129" />
+              <fx:reference source="Wall130" />
+              <fx:reference source="Wall131" />
+              <fx:reference source="Wall132" />
+              <fx:reference source="Wall133" />
+              <fx:reference source="Wall134" />
+              <fx:reference source="Wall135" />
+              <fx:reference source="Wall136" />
+              <fx:reference source="Wall137" />
+              <fx:reference source="Wall138" />
+              <fx:reference source="Wall139" />
+              <fx:reference source="Wall140" />
+              <fx:reference source="Wall141" />
+              <fx:reference source="Wall142" />
+              <fx:reference source="Wall143" />
+              <fx:reference source="Wall144" />
+              <fx:reference source="Wall145" />
+              <fx:reference source="Wall146" />
+              <fx:reference source="Wall147" />
+              <fx:reference source="Wall148" />
+              <fx:reference source="Wall149" />
+              <fx:reference source="Wall150" />
+              <fx:reference source="Wall151" />
+              <fx:reference source="Wall152" />
+              <fx:reference source="Wall153" />
+              <fx:reference source="Wall154" />
+              <fx:reference source="Wall155" />
+              <fx:reference source="Wall156" />
+              <fx:reference source="Wall157" />
+              <fx:reference source="Wall158" />
+              <fx:reference source="Wall159" />
+              <fx:reference source="Wall160" />
+              <fx:reference source="Wall161" />
+              <fx:reference source="Wall162" />
+              <fx:reference source="Wall163" />
+              <fx:reference source="Wall164" />
+              <fx:reference source="Wall165" />
+              <fx:reference source="Wall166" />
+              <fx:reference source="Wall167" />
+              <fx:reference source="Wall168" />
+              <fx:reference source="Wall169" />
+          </ArrayList>
+      </fx:define>
+      <ImageView fx:id="LaserUp1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserUp2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <fx:define>
+          <ArrayList fx:id="DustList">
+              <fx:reference source="Dust" />
+              <fx:reference source="Dust1" />
+              <fx:reference source="Dust2" />
+              <fx:reference source="Dust3" />
+              <fx:reference source="Dust4" />
+              <fx:reference source="Dust5" />
+              <fx:reference source="Dust6" />
+              <fx:reference source="Dust7" />
+              <fx:reference source="Dust8" />
+              <fx:reference source="Dust9" />
+              <fx:reference source="Dust10" />
+              <fx:reference source="Dust11" />
+              <fx:reference source="Dust12" />
+              <fx:reference source="Dust13" />
+              <fx:reference source="Dust14" />
+              <fx:reference source="Dust15" />
+              <fx:reference source="Dust16" />
+              <fx:reference source="Dust17" />
+              <fx:reference source="Dust18" />
+              <fx:reference source="Dust19" />
+              <fx:reference source="Dust20" />
+              <fx:reference source="Dust21" />
+              <fx:reference source="Dust22" />
+              <fx:reference source="Dust23" />
+              <fx:reference source="Dust24" />
+              <fx:reference source="Dust25" />
+              <fx:reference source="Dust26" />
+              <fx:reference source="Dust27" />
+              <fx:reference source="Dust28" />
+              <fx:reference source="Dust29" />
+              <fx:reference source="Dust30" />
+              <fx:reference source="Dust31" />
+              <fx:reference source="Dust32" />
+              <fx:reference source="Dust33" />
+              <fx:reference source="Dust34" />
+              <fx:reference source="Dust35" />
+              <fx:reference source="Dust36" />
+              <fx:reference source="Dust37" />
+              <fx:reference source="Dust38" />
+              <fx:reference source="Dust39" />
+              <fx:reference source="Dust40" />
+              <fx:reference source="Dust41" />
+              <fx:reference source="Dust42" />
+              <fx:reference source="Dust43" />
+              <fx:reference source="Dust44" />
+              <fx:reference source="Dust45" />
+              <fx:reference source="Dust46" />
+              <fx:reference source="Dust47" />
+              <fx:reference source="Dust48" />
+              <fx:reference source="Dust49" />
+              <fx:reference source="Dust50" />
+              <fx:reference source="Dust51" />
+              <fx:reference source="Dust52" />
+              <fx:reference source="Dust53" />
+              <fx:reference source="Dust54" />
+              <fx:reference source="Dust55" />
+              <fx:reference source="Dust56" />
+              <fx:reference source="Dust57" />
+              <fx:reference source="Dust58" />
+              <fx:reference source="Dust59" />
+              <fx:reference source="Dust60" />
+          </ArrayList>
+      </fx:define>
+      <ImageView fx:id="LaserUp" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserDown1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserDown2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserDown" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Bomb" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" layoutX="-50.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@Bomb.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserCenter" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserCenter.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Bomb1" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" layoutX="-150.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Bomb.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Bomb2" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Bomb.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserRight" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserCenter1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserCenter.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserCenter2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserCenter.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserLeft" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserRight1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserRight2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserLeft1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mob1" blendMode="LIGHTEN" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Mob1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mob2" blendMode="LIGHTEN" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Mob1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mob3" blendMode="LIGHTEN" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Mob1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserLeft2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mob4" blendMode="ADD" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Mob.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mob5" blendMode="ADD" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Mob.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mob6" blendMode="ADD" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Mob.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Heart" blendMode="MULTIPLY" fitHeight="40.0" fitWidth="40.0" layoutX="110.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Heart.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Heart1" blendMode="MULTIPLY" fitHeight="40.0" fitWidth="40.0" layoutX="160.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Heart.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Heart2" blendMode="MULTIPLY" fitHeight="40.0" fitWidth="40.0" layoutX="210.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Heart.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mob" blendMode="LIGHTEN" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Mob1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mob7" blendMode="ADD" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/Mob.png" />
+         </image>
+      </ImageView>
+      <fx:define>
+          <ArrayList fx:id="mobList">
+              <fx:reference source="mob" />
+              <fx:reference source="mob1" />
+              <fx:reference source="mob2" />
+              <fx:reference source="mob3" /> 
+              <fx:reference source="mob4" />
+              <fx:reference source="mob5" />
+              <fx:reference source="mob6" />
+              <fx:reference source="mob7" />  
+          </ArrayList>
+      </fx:define>
+      <Label fx:id="Life" layoutX="2.0" layoutY="6.0" prefHeight="40.0" prefWidth="101.0" text="Life Left :" textAlignment="JUSTIFY" textFill="#f1fa02">
+         <font>
+            <Font name="Arial Black" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="ScoreTitle" layoutX="439.0" layoutY="5.0" prefHeight="40.0" prefWidth="86.0" text="Score :" textFill="#f1fa02">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="Point" layoutX="532.0" layoutY="6.0" prefHeight="40.0" prefWidth="101.0" text="Label" textFill="#f1fa02">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="ScoreBoard" layoutX="199.0" layoutY="199.0" onKeyPressed="#move" prefHeight="402.0" prefWidth="401.0">
+         <children>
+            <ImageView fitHeight="402.0" fitWidth="401.0" onKeyPressed="#move" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/WoodPane.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="Info" alignment="CENTER" layoutX="32.0" prefHeight="0.0" prefWidth="337.0" text="Stage Completed !!" textAlignment="CENTER" textFill="#e7f50a">
+               <font>
+                  <Font name="Papyrus" size="37.0" />
+               </font>
+            </Label>
+            <Button fx:id="NextLv" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="307.0" mnemonicParsing="false" onKeyPressed="#move" onMouseClicked="#nextLv" onMouseEntered="#enterNextLv" onMouseExited="#exitNextLv" prefHeight="81.0" prefWidth="155.0" style="-fx-background-color: #321d04;" text="Next Level" textFill="#b26009" visible="false">
+               <font>
+                  <Font name="Papyrus" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="ReturnMenu" alignment="CENTER" contentDisplay="CENTER" layoutX="223.0" layoutY="307.0" mnemonicParsing="false" onMouseClicked="#mainMenu" onMouseEntered="#enterMainMenu" onMouseExited="#exitMainMenu" prefHeight="81.0" prefWidth="155.0" style="-fx-background-color: #321d04;" text="MainMenu" textFill="#b26009" visible="false">
+               <font>
+                  <Font name="Papyrus" size="23.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="Result" layoutX="4.0" layoutY="74.0" prefHeight="231.0" prefWidth="387.0" visible="false">
+               <children>
+                  <Label fx:id="LvScore" layoutX="194.0" layoutY="1.0" prefHeight="32.0" prefWidth="127.0" text="Score" textFill="#10ebe0">
+                     <font>
+                        <Font name="Papyrus" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LvTimeLeft" layoutX="194.0" layoutY="37.0" prefHeight="32.0" prefWidth="127.0" text="TimeLeft :" textFill="#10ebe0">
+                     <font>
+                        <Font name="Papyrus" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="67.0" layoutY="37.0" prefHeight="32.0" prefWidth="127.0" text="TimeLeft :" textFill="#10ebe0">
+                     <font>
+                        <Font name="Papyrus" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="124.0" layoutY="1.0" prefHeight="32.0" prefWidth="70.0" text="Score :" textFill="#10ebe0">
+                     <font>
+                        <Font name="Papyrus" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Complete" layoutX="67.0" layoutY="69.0" prefHeight="40.0" prefWidth="302.0" text="Stage Completed" textFill="#ebe707">
+                     <font>
+                        <Font name="Arial" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Half" layoutX="67.0" layoutY="122.0" prefHeight="40.0" prefWidth="302.0" text="Clear Stage Within Half Of Time" textFill="#ebe707">
+                     <font>
+                        <Font name="Arial" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="NoLife" layoutX="67.0" layoutY="170.0" prefHeight="40.0" prefWidth="302.0" text="No Life Lost" textFill="#ebe707">
+                     <font>
+                        <Font name="Arial" size="21.0" />
+                     </font>
+                  </Label>
+                  <Polygon fx:id="Star1" layoutX="38.0" layoutY="90.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+                  <Polygon fx:id="Star2" layoutX="37.0" layoutY="143.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+                  <Polygon fx:id="Star3" layoutX="36.0" layoutY="191.0" points="14.3, -4.6, 4.4, -6.0, 0.0, -15.0, -4.4, -6.0, -14.3, -4.6, -7.1, 2.3, -8.8, 12.1, 0.0, 7.5, 8.8, 12.1, 7.1, 2.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.5" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="LaserLeftLeft" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserRightRight1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserRightRight2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserLeftLeft1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserUpUp1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserUpUp2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserLeftLeft2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserDownDown1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserDownDown2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserRightRight" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserRight.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="Level" layoutX="340.0" layoutY="9.0" prefHeight="32.0" prefWidth="80.0" text="Level :" textFill="#f1fa02">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="LaserUpUp" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LaserDownDown" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LaserUp.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="260.0" layoutY="9.0" prefHeight="32.0" prefWidth="80.0" text="Level :" textFill="#f1fa02">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="TimeCount" layoutX="660.0" layoutY="10.0" prefHeight="32.0" prefWidth="80.0" text="Label" textFill="#08ff03">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="Slime" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/MobLv2.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="2.0" light="$null" specularConstant="0.6" specularExponent="22.79" surfaceScale="3.49">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fx:id="Slime1" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/MobLv2.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="2.0" light="$null" specularConstant="0.6" specularExponent="36.74" surfaceScale="0.92">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fx:id="Slime2" blendMode="SCREEN" fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/MobLv2.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="2.0" light="$null" specularConstant="1.21" specularExponent="40.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+            </Lighting>
+         </effect>
+      </ImageView>
+   </children>
+</Pane>
